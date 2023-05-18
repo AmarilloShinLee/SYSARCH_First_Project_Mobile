@@ -1,21 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { Image } from 'expo-image';
 
-const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+import { StyleSheet, Text, View } from 'react-native';
+import { Button, Stack } from "@react-native-material/core"
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Image 
-        style={styles.image}
-        source="https://picsum.photos/seed/696/3000/2000"
-        //placeholder={blurhash}
-        contentFit="cover"
-        transition={1000}
-      />
-      <Text>Hello World! It's a ya boi! Amarillo Shin Lee</Text>
-      <StatusBar style="auto" />
+      <Stack fill center spacing={32}>
+        <Text>Try clicking these two wonderful button below!</Text>
+        <Button title="SIGN IN" color='#E83636' tintColor='#FEFEFE' onPress={() => alert("Hello!")} />
+        <Button title="SIGN UP" color='#EED8B6'  tintColor='#29252A'  onPress={() => alert("Hello!")} />
+      </Stack>
     </View>
   );
 }
@@ -27,9 +21,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
-    flex: 1,
-    width: '100%',
-    backgroundColor: '#0553',
+  primaryButton: {
+    backgroundColor: '#E83636',
   },
+  secondaryButton: {
+    backgroundColor: '#EED8B6',
+  }
 });
